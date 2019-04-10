@@ -84,13 +84,13 @@ app.get('/via_nuvem_teste', (req, res) => {
     <body>
       <div class="row">
         <div class="col">
-           <img src="../img/twitter.jpg" alt="Redes sociais">
+           <img class="twitter" src="../img/twitter.jpg" alt="Logo do Twiter">
         </div>
         <div class="col">
-           <img src="../img/facebook.jpg" alt="Redes sociais">
+           <img class="facebook" src="../img/facebook.jpg" alt="Logo do Facebook">
         </div>
         <div class="col">
-          <img src="../img/twitter.jpg" alt="Redes sociais">
+          <img class="skype" src="../img/skype.png" alt="Logo do Skyper">
         </div>        
       </div>
     </body>
