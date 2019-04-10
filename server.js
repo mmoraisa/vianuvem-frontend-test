@@ -32,7 +32,7 @@ app.use(cors())
 
 app.get('/', (req, res) => {
   const help = `
-  <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+
 	<pre>
 	  <h1>Vianuvem Frontend Test</h1>
 	  Bem vindo ao teste de frontend da Vianuvem!
@@ -68,6 +68,37 @@ app.get('/circles', (req, res) => {
     res.send(circles)
 })
 
+app.get('/via_nuvem_teste', (req, res) => {
+  res.send(`
+  <!DOCTYPE html>
+  <html lang="en">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+  
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Flexbox Grid System </title>
+    </head>
+  
+    <body>
+      <div class="row">
+        <div class="col">
+           <img src="../img/twitter.jpg" alt="Redes sociais">
+        </div>
+        <div class="col">
+           <img src="../img/facebook.jpg" alt="Redes sociais">
+        </div>
+        <div class="col">
+          <img src="../img/twitter.jpg" alt="Redes sociais">
+        </div>        
+      </div>
+    </body>
+  
+  </html>
+  
+  `)
+})
 
 
 app.listen(3001, () => {
