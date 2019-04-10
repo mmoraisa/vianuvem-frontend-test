@@ -27,10 +27,12 @@ const circles = [
 ]
 
 app.use(express.static('public'))
+app.use(express.static(`css/estilos.css` + '/public'));
 app.use(cors())
 
 app.get('/', (req, res) => {
-	const help = `
+  const help = `
+  <link rel="stylesheet" type="text/css" href="css/estilos.css" />
 	<pre>
 	  <h1>Vianuvem Frontend Test</h1>
 	  Bem vindo ao teste de frontend da Vianuvem!
@@ -66,6 +68,9 @@ app.get('/circles', (req, res) => {
     res.send(circles)
 })
 
+
+
 app.listen(3001, () => {
   console.log('Server listening on port 3001')
 })
+
