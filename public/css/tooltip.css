@@ -1,0 +1,247 @@
+/** 
+ * Position the tooltip as relative.
+ * Inorder to position the tooltip text and tooltip arrow, 
+ * the parent should be relative, absolute or fixed. 
+ */
+ [data-tooltip-top],
+ [data-tooltip-bottom],
+ [data-tooltip-left],
+ [data-tooltip-right] {
+   position: relative;
+   display: inline-block;
+ }
+ 
+ /** 
+   * Common styles for both parts of tool tip.
+   * The tooltip will have two parts,
+   * The tooltip text and the tooltip arrow.
+   */
+ [data-tooltip-top]::before,
+ [data-tooltip-bottom]::before,
+ [data-tooltip-left]::before,
+ [data-tooltip-right]::before,
+ [data-tooltip-top]::after,
+ [data-tooltip-bottom]::after,
+ [data-tooltip-left]::after,
+ [data-tooltip-right]::after {
+   position: absolute;
+   visibility: hidden;
+   opacity: 0;
+ }
+ 
+ [data-tooltip-top]:hover::before,
+ [data-tooltip-top]:hover::after,
+ [data-tooltip-top]:focus::before,
+ [data-tooltip-top]:focus::after,
+ [data-tooltip-bottom]:hover::before,
+ [data-tooltip-bottom]:hover::after,
+ [data-tooltip-bottom]:focus::before,
+ [data-tooltip-bottom]:focus::after,
+ [data-tooltip-left]:hover::before,
+ [data-tooltip-left]:hover::after,
+ [data-tooltip-left]:focus::before,
+ [data-tooltip-left]:focus::after,
+ [data-tooltip-right]:hover::before,
+ [data-tooltip-right]:hover::after,
+ [data-tooltip-right]:focus::before,
+ [data-tooltip-right]:focus::after {
+   visibility: visible;
+   opacity: 1;
+ }
+ 
+ /**
+   * The tooltip arrow.
+   */
+ [data-tooltip-top]::before,
+ [data-tooltip-bottom]::before,
+ [data-tooltip-left]::before,
+ [data-tooltip-right]::before {
+   content: '';
+   border: 7px solid transparent;
+   -webkit-transition: all 50ms ease-in-out 50ms;
+   transition: all 50ms ease-in-out 50ms;
+ }
+ 
+ /**
+   * The tooltip arrow for top tooltip.
+   */
+ [data-tooltip-top]::before {
+   bottom: 100%;
+   left: 50%;
+   border-bottom-width: 0;
+   border-top-color: #4d4d4d;
+   -webkit-transform: translate(-50%, -100%);
+   transform: translate(-50%, -100%);
+ }
+ 
+ /**
+   * The tooltip arrow for bottom tooltip.
+   */
+ [data-tooltip-bottom]::before {
+   top: 100%;
+   left: 50%;
+   border-top-width: 0;
+   border-bottom-color: #4d4d4d;
+   -webkit-transform: translate(-50%, 100%);
+   transform: translate(-50%, 100%);
+ }
+ 
+ /**
+   * The tooltip arrow for left tooltip.
+   */
+ [data-tooltip-left]::before {
+   right: 100%;
+   top: 50%;
+   border-right-width: 0;
+   border-left-color: #4d4d4d;
+   -webkit-transform: translate(-100%, -50%);
+   transform: translate(-100%, -50%);
+ }
+ 
+ /**
+   * The tooltip arrow for right tooltip.
+   */
+ [data-tooltip-right]::before {
+   left: 100%;
+   top: 50%;
+   border-left-width: 0;
+   border-right-color: #4d4d4d;
+   -webkit-transform: translate(100%, -50%);
+   transform: translate(100%, -50%);
+ }
+ 
+ [data-tooltip-top]:hover::before,
+ [data-tooltip-top]:focus::before,
+ [data-tooltip-bottom]:hover::before,
+ [data-tooltip-bottom]:focus::before {
+   -webkit-transform: translate(-50%, 0);
+   transform: translate(-50%, 0);
+ }
+ 
+ [data-tooltip-left]:hover::before,
+ [data-tooltip-left]:focus::before,
+ [data-tooltip-right]:hover::before,
+ [data-tooltip-right]:focus::before {
+   -webkit-transform: translate(0, -50%);
+   transform: translate(0, -50%);
+ }
+ 
+ [data-tooltip-top]:hover::before,
+ [data-tooltip-top]:focus::before,
+ [data-tooltip-bottom]:hover::before,
+ [data-tooltip-bottom]:focus::before,
+ [data-tooltip-left]:hover::before,
+ [data-tooltip-left]:focus::before,
+ [data-tooltip-right]:hover::before,
+ [data-tooltip-right]:focus::before {
+   z-index: 9999;
+   -webkit-transition: all 300ms ease-in-out 300ms;
+   transition: all 300ms ease-in-out 300ms;
+ }
+ 
+ /** 
+   * The tooltip text.
+   */
+ [data-tooltip-top]::after,
+ [data-tooltip-bottom]::after,
+ [data-tooltip-left]::after,
+ [data-tooltip-right]::after {
+   font-size: 14px;
+   color: white;
+   display: block;
+   background-color: #4d4d4d;
+   min-width: -webkit-fit-content;
+   min-width: fit-content;
+   min-width: -ms-fit-content;
+   min-width: -moz-fit-content;
+   max-width: 200px;
+   min-height: auto;
+   min-height: -ms-fit-content;
+   min-height: -moz-fit-content;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   border-radius: 4px;
+   margin-top: 0px !important;
+   -webkit-font-smoothing: antialiased;
+   text-rendering: optimizeLegibility;
+   -moz-osx-font-smoothing: grayscale;
+   padding: 8px;
+   text-align: center;
+   white-space: nowrap;
+   z-index: 999;
+   -webkit-transition: all 300ms ease-in-out 450ms;
+   transition: all 300ms ease-in-out 450ms;
+ }
+ 
+ [data-tooltip-top]::after,
+ [data-tooltip-bottom]::after {
+   left: 50%;
+   -webkit-transform-origin: 0 center;
+   transform-origin: 0 center;
+ }
+ 
+ [data-tooltip-top]::after {
+   content: attr(data-tooltip-top);
+   bottom: calc(100% + 7px);
+   -webkit-transform: scale(0.5) translate(-50%, 0);
+   transform: scale(0.5) translate(-50%, 0);
+ }
+ 
+ [data-tooltip-bottom]::after {
+   content: attr(data-tooltip-bottom);
+   top: calc(100% + 7px);
+   -webkit-transform: scale(0.5) translate(-50%, 0);
+   transform: scale(0.5) translate(-50%, 0);
+ }
+ 
+ [data-tooltip-left]::after,
+ [data-tooltip-right]::after {
+   top: 50%;
+   -webkit-transform-origin: center 0;
+   transform-origin: center 0;
+ }
+ 
+ [data-tooltip-left]::after {
+   content: attr(data-tooltip-left);
+   right: calc(100% + 7px);
+   -webkit-transform: scale(0.5) translate(0, -50%);
+   transform: scale(0.5) translate(0, -50%);
+ }
+ 
+ [data-tooltip-right]::after {
+   content: attr(data-tooltip-right);
+   left: calc(100% + 7px);
+   -webkit-transform: scale(0.5) translate(0, -50%);
+   transform: scale(0.5) translate(0, -50%);
+ }
+ 
+ /**
+ * Animate the tooltip text when tooltip is hovered.
+ */
+[data-tooltip-top]:hover::after,
+[data-tooltip-top]:focus::after,
+[data-tooltip-bottom]:hover::after,
+[data-tooltip-bottom]:focus::after,
+[data-tooltip-left]:hover::after,
+[data-tooltip-left]:focus::after,
+[data-tooltip-right]:hover::after,
+[data-tooltip-right]:focus::after {
+  -webkit-transition: all 300ms ease-in-out 300ms;
+  transition: all 300ms ease-in-out 300ms;
+}
+ 
+ [data-tooltip-top]:hover::after,
+ [data-tooltip-top]:focus::after,
+ [data-tooltip-bottom]:hover::after,
+ [data-tooltip-bottom]:focus::after {
+   -webkit-transform: scale(1) translate(-50%, 0);
+   transform: scale(1) translate(-50%, 0);
+ }
+ 
+ [data-tooltip-left]:hover::after,
+ [data-tooltip-left]:focus::after,
+ [data-tooltip-right]:hover::after,
+ [data-tooltip-right]:focus::after {
+   -webkit-transform: scale(1) translate(0, -50%);
+   transform: scale(1) translate(0, -50%);
+ }

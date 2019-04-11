@@ -28,6 +28,7 @@ const circles = [
 
 app.use(express.static('public'))
 app.use(express.static(`css/estilos.css` + '/public'));
+app.use(express.static(`css/tooltip.css` + '/public'));
 app.use(cors())
 
 app.get('/', (req, res) => {
@@ -73,6 +74,7 @@ app.get('/via_nuvem_teste', (req, res) => {
   <!DOCTYPE html>
   <html lang="en">
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="css/tooltip.css" />
   
     <head>
       <meta charset="UTF-8">
@@ -88,13 +90,13 @@ app.get('/via_nuvem_teste', (req, res) => {
         </div>  
       </div>
       <div class="row">
-        <div class="col">
-           <img class="twitter" src="../img/twitter.jpg" alt="Logo do Twiter">
+        <div class="col" data-tooltip-bottom="Twitter" tabindex="0">
+           <img class="twitter" src="../img/twitter.jpg" alt="Logo do Twitter">
         </div>
-        <div class="col">
+        <div class="col" data-tooltip-bottom="Facebook" tabindex="0">
            <img class="facebook" src="../img/facebook.jpg" alt="Logo do Facebook">
         </div>
-        <div class="col">
+        <div class="col" data-tooltip-bottom="Skyper" tabindex="0">
           <img class="skype" src="../img/skype.png" alt="Logo do Skyper">
         </div>        
       </div>
