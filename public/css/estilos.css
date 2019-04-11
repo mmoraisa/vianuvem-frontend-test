@@ -16,10 +16,9 @@ body {
 	margin: 50px 0px;
 }
 
-/* .row  Parent  */
 .row {
-	display: flex;
-	flex-direction: column;
+    margin: auto;
+	width: 90%;
 }
   
 /* .col Child  */
