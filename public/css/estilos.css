@@ -12,7 +12,6 @@ html {
 
 body {
 	font-family: arial;
-	background-color: #FFF;
 	-webkit-font-smoothing: antialiased;
 	margin: 50px 0px;
 }
@@ -26,28 +25,71 @@ body {
 /* .col Child  */
 .col {
 	flex: 1;
-	padding: 1em;
-	margin: .6em;
+	/*padding: 1em;
+	margin: .6em; 
 	/* important */
 	color: #333;
-	background-color: #eee;
 }
-  
+h1 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
 img {
 	display: block;
 	margin: 0 auto 0 auto; 
 	width: 100%;
 }
 
+img.twitter {
+    border: 10px solid #c65353;
+	border-radius: 50%;
+	padding: 0;
+}
+img.facebook {
+    border: 10px solid #80ffaa;
+	border-radius: 50%;
+	height: 40%;
+	width: 40%;
+	padding: 0;
+}
+img.skype {
+    border: 10px solid #006666;
+	border-radius: 50%;
+	height: 70%;
+	width: 70%;
+	padding: 0;
+}
+
+
 @media screen and (min-width: 500px) {
 	.row {
 	  display: flex;
 	  flex-direction: row;
+	  width: 70%;
+      margin: auto;
 	}
 	img {
 	  padding: 0 2em 0 2em;
 	  width: 66.6%;
 	}
+	img.facebook {
+		height: 40%;
+		width: 45%;
+		padding: 0;
+	}
+	img.twitter {
+		height: 100%;
+		width: 100%;
+	}
+	img.facebook {
+		/* margin-top: auto; */
+		transform: translateX(20%) translateY(65%);
+	}
+	img.skype {
+		transform: translateX(0%) translateY(20%);
+	}
   }
   
-  
+
+
+
